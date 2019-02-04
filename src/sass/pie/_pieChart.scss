@@ -1,0 +1,55 @@
+.pie-chart {
+
+  .pie-circle-path {
+  }
+
+  .pie-label {
+    transition: transform .25s ease-out;
+  }
+
+  .pie-value {
+    font-weight: bolder;
+    opacity: 1;
+    transition: opacity .25s ease-out, transform .25s ease-out;
+  }
+
+  .pie-graph {
+    opacity: 1;
+    transition: opacity .5s ease-out, transform .5s ease-out;
+    transition-delay: .25s;
+  }
+
+  &.loading {
+
+    .pie-circle-path {
+      animation-name: pieCirclePathLoadingAnimation;
+      animation-direction: normal;
+      animation-duration: .75s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+
+    .pie-label {
+      transform: translate(0, 16px);
+    }
+
+    .pie-value {
+      opacity: 0;
+      transform: translate(0, 16px);
+    }
+
+    .pie-graph {
+      opacity: 0;
+      transform: scale(0.1);
+    }
+  }
+}
+
+@keyframes pieCirclePathLoadingAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

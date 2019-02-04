@@ -1,0 +1,76 @@
+@import 'pie/pieChart';
+
+$revenueColor: #82d53d;
+$revenueAccentColor: #416a1f;
+$impresionsColor: #73c5e5;
+$impresionsAccentColor: #2c5668;
+$visitsColor: #f1c431;
+$visitsAccentColor: #b95521;
+
+.element {
+
+  width: 250px;
+
+  .values-item {
+    opacity: 0;
+
+    .title {
+      font-weight: bold;
+    }
+
+    .values {
+      .percent {
+        color: #333;
+        font-size: 14px;
+      }
+
+      .value {
+        color: #aaa;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &.loaded {
+    border-bottom: 2px solid #ddd;
+    .values-item {
+      transition: opacity .5s ease-out;
+      opacity: 1;
+    }
+  }
+
+  &.revenues {
+    .tablet-values .title {
+      color: $revenueColor;
+    }
+    .smartphone-values .title {
+      color: $revenueAccentColor;
+    }
+  }
+
+  &.impresions {
+    .tablet-values .title {
+      color: $impresionsColor;
+    }
+    .smartphone-values .title {
+      color: $impresionsAccentColor;
+    }
+  }
+
+  &.visits {
+    .tablet-values .title {
+      color: $visitsColor;
+    }
+    .smartphone-values .title {
+      color: $visitsAccentColor;
+    }
+  }
+
+}
+
+
+
+
+
+
+
